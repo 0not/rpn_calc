@@ -1,0 +1,13 @@
+.stack:before {
+    content: "Stack:";
+}
+
+.stack {
+    height: 10em;
+    overflow-y: auto;
+    background-color: #222;
+    color: green;
+    font-family: consolas;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
