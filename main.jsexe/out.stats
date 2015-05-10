@@ -1,7 +1,7 @@
 code size summary per package:
 
-base:                    594268
-conta_5w3UY4chXx62LVUOUrXeRm:160583
+base:                    594591
+conta_5w3UY4chXx62LVUOUrXeRm:157230
 depen_3ZazWrAF611CC0pGA27xUj:2008
 depen_GZFfxs8A7WS3jvJthZg6p3:48418
 ghc-prim:                34585
@@ -9,8 +9,8 @@ ghcjs_2U6CT3su9VuHXMTtRe30dX:9545
 ghcjs_5KR2G57UB1kIpNcQbyzTYs:89627
 ghcjs_6esBZoVv7wo3AivGOHV5Nr:1852
 integer-gmp:             33330
-main:                    62545
-refle_E8NuUNnhtFEH0YI0gkwzYK:282385
+main:                    62906
+refle_E8NuUNnhtFEH0YI0gkwzYK:283102
 refle_FUOy8T78a6yK86VCAKszxS:335630
 reftf_JOU40Nd0lxyACBtr3v80Qj:1202
 safe_1VnxXqNOMH66AukGCNjPJi:592
@@ -28,6 +28,7 @@ base
     Data.Either:                        397
     Data.Foldable:                      3578
     Data.Maybe:                         1186
+    Data.Monoid:                        108
     Data.OldList:                       2529
     Data.Tuple:                         334
     Data.Type.Equality:                 287
@@ -38,7 +39,7 @@ base
     Foreign.Marshal.Array:              2038
     Foreign.Storable:                   2699
     GHC.Arr:                            3629
-    GHC.Base:                           9290
+    GHC.Base:                           9505
     GHC.Char:                           740
     GHC.Conc.Sync:                      8048
     GHC.Enum:                           11722
@@ -86,7 +87,7 @@ base
 
 conta_5w3UY4chXx62LVUOUrXeRm
     Data.IntMap.Base:                   11332
-    Data.Map.Base:                      95073
+    Data.Map.Base:                      91720
     Data.Set.Base:                      54178
 
 depen_3ZazWrAF611CC0pGA27xUj
@@ -128,12 +129,12 @@ integer-gmp
 
 main
     Calc:                               16135
-    Main:                               46410
+    Main:                               46771
 
 refle_E8NuUNnhtFEH0YI0gkwzYK
-    Reflex.Dom.Class:                   11972
+    Reflex.Dom.Class:                   12191
     Reflex.Dom.Internal:                104948
-    Reflex.Dom.Widget.Basic:            143743
+    Reflex.Dom.Widget.Basic:            144241
     Reflex.Dom.Widget.Input:            21722
 
 refle_FUOy8T78a6yK86VCAKszxS
@@ -166,5 +167,5 @@ trans_KzbnBSIEqPI2eU1Inn4mzm
 
 
 
-packed metadata: 330627
+packed metadata: 331699
 

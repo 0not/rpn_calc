@@ -4,24 +4,26 @@ import Reflex.Dom
 import Reflex.Dom.Widget.Input
 import Reflex.Dom.Class
 import qualified Data.Map as Map
+import Data.Monoid ((<>))
+
 import Safe (readMay)
 
 import Calc (calculate)
 
 stylesheet :: MonadWidget t m => String -> m ()
-stylesheet s = elAttr "link" (Map.fromList [("rel", "stylesheet"), ("href", s)]) $ return ()
+stylesheet s = elAttr "link" ("rel" =: "stylesheet" <> "href" =: s) blank
 
 scriptSrc :: MonadWidget t m => String -> m ()
-scriptSrc s = elAttr "script" (Map.fromList [("type", "javascript"), ("src", s)]) $ return ()
+scriptSrc s = elAttr "script" ("type" =: "javascript" <> "src" =:  s) blank
 
 metaEdge :: MonadWidget t m => m ()
-metaEdge = elAttr "meta" (Map.fromList [("http-equiv", "X-UA-Compatible"), ("content", "IE=edge")]) $ return ()
+metaEdge = elAttr "meta" ("http-equiv" =: "X-UA-Compatible" <> "content" =: "IE=edge") blank
 
 metaViewport :: MonadWidget t m => String -> m ()
-metaViewport s = elAttr "meta" (Map.fromList [("name", "viewport"), ("content", s)]) $ return ()
+metaViewport s = elAttr "meta" ("name" =: "viewport" <> "content" =: s) blank
 
 aClass :: MonadWidget t m => String -> String -> String -> m ()
-aClass c h t = elAttr "a" (Map.fromList [("class", c), ("href", h)]) $ text t
+aClass c h t = elAttr "a" ("class" =: c <> "href" =: h) $ text t
 
 headSection = do 
     metaEdge
@@ -39,8 +41,8 @@ navbar = elClass "nav" "navbar" $ do
 main = mainWidgetWithHead headSection $ do
     navbar
     divClass "container" $ do
-        rec divClass "stack" $ simpleList result $ \t -> el "div" $ dynText t
-            ti <- textInput (TextInputConfig "text" "1 2 +" never $ constDyn $ Map.fromList [("class","form-control")])
+        rec divClass "stack" $ elAttr "ol" ("class" =: "list" <> "reversed" =: "reversed")  $ simpleList result $ \t -> el "li" $ dynText t
+            ti <- textInput (TextInputConfig "text" "1 2 +" never $ constDyn ("class" =: "form-control"))
             result <- mapDyn (map show . calculate) $ _textInput_value ti
         divClass "notes" $ do
             el "p" $ text "Supported operations: + - * / tan sin cos atan asin acos d2r r2d"

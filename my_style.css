@@ -1,13 +1,21 @@
-.stack:before {
-    content: "Stack:";
-}
-
 .stack {
     height: 10em;
     overflow-y: auto;
     background-color: #222;
     color: green;
-    font-family: consolas;
+    font-family: monospace;
     padding: 0.5em;
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column-reverse;
 }
+
+.stack ol {
+    flex-shrink: 0;
+}
+
+ol.list {
+    text-align: right;
+    margin: 0;
+}
+
